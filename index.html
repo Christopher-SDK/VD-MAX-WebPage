@@ -415,25 +415,27 @@
                     </div>
                 </div>
 
-                <form action="" class="contact__form">
+                <form action="" class="contact__form" id="contact-form">
                     <div class="contact__inputs">
                         <div class="contact__content">
-                            <input type="email" placeholder=" " class="contact__input">
+                            <input type="email" name="user_email" id="contact-email"placeholder=" " class="contact__input">
                             <label for="" class="contact__label">Email</label>
                         </div>
 
                         <div class="contact__content">
-                            <input type="text" placeholder=" " class="contact__input">
+                            <input type="text" name="user_subject" id="contact-subject"placeholder=" " class="contact__input">
                             <label for="" class="contact__label">Subject</label>
                         </div>
 
                         <div class="contact__content contact__area">
-                            <textarea name="message" placeholder=" " class="contact__input"></textarea>
+                            <textarea name="user_message" id="contact-message" placeholder=" " class="contact__input"></textarea>
                             <label for="" class="contact__label">Message</label>
                         </div>
                     </div>
 
-                    <button class="button button--flex">
+                    <p class="contact__message" id="contact-message-emergent"></p>
+
+                    <button type="submit" class="button button--flex">
                         Send Message
                         <i class="ri-arrow-right-up-line button__icon"></i>
                     </button>
@@ -520,6 +522,9 @@
 
     <!--=============== SCROLL REVEAL ===============-->
     <script src="assets/js/scrollreveal.min.js"></script>
+
+    <!--=============== EMAIL JS ===============-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 
     <!--=============== MAIN JS ===============-->
     <script src="assets/js/main.js"></script>

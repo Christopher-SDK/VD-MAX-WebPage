@@ -421,9 +421,13 @@ the website, in dark theme
   row-gap: 2rem;
 }
 
-.about__img{
+.about__img .about__img__s{
   width: 280px;
   justify-self: center;
+}
+
+.about__img__s{
+  transition: .3s;
 }
 
 .about__title{
@@ -522,6 +526,12 @@ the website, in dark theme
   cursor: pointer;
 }
 
+.about__card{
+  display: grid;
+  position: relative;
+  cursor: pointer;
+}
+
 .product__img{
   position: relative;
   width: 120px;
@@ -567,6 +577,10 @@ the website, in dark theme
 }
 
 .product__card:hover .product__img{
+  transform: translateY(-.5rem);
+}
+
+.about__card:hover .about__img__s{
   transform: translateY(-.5rem);
 }
 
@@ -696,10 +710,7 @@ the website, in dark theme
   height: 100%;
   padding: 1rem 1rem 1rem 0;
   background: none;
-
   color: var(--text-color);
-
-  
   border: none;
   outline: none;
   z-index: 1;
@@ -710,6 +721,7 @@ the website, in dark theme
   top: .75rem;
   width: 100%;
   font-size: var(--small-font-size);
+  background-color: var(--body-color);
   color: var(--text-color-light);
   transition: .3s;
 }
@@ -735,6 +747,22 @@ the website, in dark theme
   top: -.75rem;
   font-size: var(--smaller-font-size);
   z-index: 10;
+}
+
+.contact__message{
+  font-size: var(--small-font-size);
+  position: absolute;
+  bottom: 4.2rem;
+  left: .1rem;
+}
+
+/* Status color */
+.color-red{
+  color:hsl(4,71%,50%);
+}
+
+.color-blue{
+  color:hsl(207, 56%, 45%);
 }
 
 /*=============== FOOTER ===============*/
@@ -997,7 +1025,7 @@ the website, in dark theme
     padding-right: 7rem;
   }
 
-  .about__img{
+  .about__img .about__img__s{
     width: 380px;
   }
 
