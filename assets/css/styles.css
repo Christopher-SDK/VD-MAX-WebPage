@@ -529,7 +529,6 @@ the website, in dark theme
 .about__card{
   display: grid;
   position: relative;
-  cursor: pointer;
 }
 
 .product__img{
