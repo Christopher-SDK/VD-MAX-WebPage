@@ -71,8 +71,8 @@ const toggleItem = (item) => {
 const sections = document.querySelectorAll('section[id]')
 
 function scrollActive() {
+    if(window.location.pathname==='/' || window.location.pathname==='/index.html' || window.location.pathname===''){
     const scrollY = window.pageYOffset
-
     sections.forEach(current => {
         const sectionHeight = current.offsetHeight,
             sectionTop = current.offsetTop - 58,
@@ -83,7 +83,7 @@ function scrollActive() {
         } else {
             document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.remove('active-link')
         }
-    })
+    })}
 }
 window.addEventListener('scroll', scrollActive)
 
@@ -117,6 +117,7 @@ if (selectedTheme) {
 
 // Activate / deactivate the theme manually with the button
 themeButton.addEventListener('click', () => {
+    window.location.reload();
     // Add or remove the dark / icon theme
     document.body.classList.toggle(darkTheme)
     themeButton.classList.toggle(iconTheme)
@@ -133,37 +134,6 @@ const sr = ScrollReveal({
     delay: 400,
     // reset: true
 })
-
-// /*============== CHANGING LANGUAGE =====================*/
-// var btn_checkbox= document.getElementById('checkbox-translator');
-// // We obtain the current theme that the interface has by validating the dark-theme class
-// const getCurrentLanguage = () => document.head.classList.contains('spanish') ? 'spanish' : 'english'
-// btn_checkbox.addEventListener('click', ()=>{
-//     document.head.classList.toggle('spanish');
-//     btn_checkbox.classList.toggle('active');
-
-//     //Saving mode in local storage
-//     if(document.head.classList.contains('spanish')){
-//         localStorage.setItem('spanish-language', 'true');
-//     }else{
-//         localStorage.setItem('spanish-language', 'false');
-//     }
-
-//     if(getCurrentLanguage()==='spanish'){
-//         spanishLanguageOn();
-//     }else{
-//         englishLanguageOn();
-//     }
-// })
-
-// //We obtain the actual mode
-// if(localStorage.getItem('spanish-language')==='true'){
-//     document.head.classList.add('spanish');
-//     btn_checkbox.classList.add('active');
-// }else {
-//     document.head.classList.remove('spanish');
-//     btn_checkbox.classList.remove('active');
-// }
 
 /*============== CHANGING LANGUAGE =====================*/
 const btn_checkbox= document.getElementById('checkbox-translator');
@@ -263,7 +233,7 @@ function spanishLanguageOn() {
          document.getElementById('subscribe__button').innerHTML="Suscribir";
          document.getElementById('footer_title_address').innerHTML="Dirección";
          document.getElementById('footer_title_contact__us').innerHTML="Contáctenos";
-         document.getElementById('footer_title_credit_cards').innerHTML="Aceptamos todas las tarjetas de crédito";
+         document.getElementById('footer_title_credit_cards').innerHTML="Aceptamos todos los métodos de pago";
          document.getElementById('footer_copy').innerHTML="&#169; VDMAX. Todos los derechos reservados"  ;
         }else 
         if(window.location.pathname==='/grease_remover.html'){
@@ -291,7 +261,7 @@ function spanishLanguageOn() {
         document.getElementById('subscribe__button').innerHTML="Suscribir";
         document.getElementById('footer_title_address').innerHTML="Dirección";
         document.getElementById('footer_title_contact__us').innerHTML="Contáctenos";
-        document.getElementById('footer_title_credit_cards').innerHTML="Aceptamos todas las tarjetas de crédito";
+        document.getElementById('footer_title_credit_cards').innerHTML="Aceptamos todos los métodos de pago";
         document.getElementById('footer_copy').innerHTML="&#169; VDMAX. Todos los derechos reservados"  ;
         }else
         if(window.location.pathname==='/bathroom_cleaner.html'){
@@ -319,7 +289,7 @@ function spanishLanguageOn() {
         document.getElementById('subscribe__button').innerHTML="Suscribir";
         document.getElementById('footer_title_address').innerHTML="Dirección";
         document.getElementById('footer_title_contact__us').innerHTML="Contáctenos";
-        document.getElementById('footer_title_credit_cards').innerHTML="Aceptamos todas las tarjetas de crédito";
+        document.getElementById('footer_title_credit_cards').innerHTML="Aceptamos todos los métodos de pago";
         document.getElementById('footer_copy').innerHTML="&#169; VDMAX. Todos los derechos reservados"  ;
         }else 
         if(window.location.pathname==='/multipurpose.html'){
@@ -347,7 +317,7 @@ function spanishLanguageOn() {
         document.getElementById('subscribe__button').innerHTML="Suscribir";
         document.getElementById('footer_title_address').innerHTML="Dirección";
         document.getElementById('footer_title_contact__us').innerHTML="Contáctenos";
-        document.getElementById('footer_title_credit_cards').innerHTML="Aceptamos todas las tarjetas de crédito";
+        document.getElementById('footer_title_credit_cards').innerHTML="Aceptamos todos los métodos de pago";
         document.getElementById('footer_copy').innerHTML="&#169; VDMAX. Todos los derechos reservados"  ;
         }else 
         if(window.location.pathname==='/auto_silicon.html'){
@@ -374,7 +344,7 @@ function spanishLanguageOn() {
         document.getElementById('subscribe__button').innerHTML="Suscribir";
         document.getElementById('footer_title_address').innerHTML="Dirección";
         document.getElementById('footer_title_contact__us').innerHTML="Contáctenos";
-        document.getElementById('footer_title_credit_cards').innerHTML="Aceptamos todas las tarjetas de crédito";
+        document.getElementById('footer_title_credit_cards').innerHTML="Aceptamos todos los métodos de pago";
         document.getElementById('footer_copy').innerHTML="&#169; VDMAX. Todos los derechos reservados"  ;
         }else 
         if(window.location.pathname==='/perfumer.html'){
@@ -402,7 +372,7 @@ function spanishLanguageOn() {
         document.getElementById('subscribe__button').innerHTML="Suscribir";
         document.getElementById('footer_title_address').innerHTML="Dirección";
         document.getElementById('footer_title_contact__us').innerHTML="Contáctenos";
-        document.getElementById('footer_title_credit_cards').innerHTML="Aceptamos todas las tarjetas de crédito";
+        document.getElementById('footer_title_credit_cards').innerHTML="Aceptamos todos los métodos de pago";
         document.getElementById('footer_copy').innerHTML="&#169; VDMAX. Todos los derechos reservados"  ;
         }
                      
@@ -411,75 +381,6 @@ function spanishLanguageOn() {
 
         
 } 
-
-// function englishLanguageOn(){
-//                 /*============NAV-MENU============*/
-// document.getElementById('home_nav__link').innerHTML="Home";
-// document.getElementById('about_nav__link').innerHTML = "About";
-// document.getElementById('products_nav__link').innerHTML = "Products";
-// document.getElementById('faqs_nav__link').innerHTML = "FAQs";
-// document.getElementById('contact_nav__link').innerHTML = "Contact Us";
-//             /*==============HOME==============*/
-// document.getElementById('home__title').innerHTML = "You say it <br> we clean it";
-// document.getElementById('home__description').innerHTML = "Request incredible cleaning products for your offices or departments. Add impeccability to your home.";
-// document.getElementById('explore').innerHTML = "Explore";
-// document.getElementById('follow').innerHTML = "Follow Us";
-//             /*==============ABOUT==============*/
-// document.getElementById('about__title').innerHTML = "Who we are & <br> why choose us";
-// document.getElementById('about__description').innerHTML = "We have more than 1000+ reviews of our customers. They trust our products cleaning process and delivery service is always on time.";
-// document.getElementById('about__details_1').innerHTML="We always deliver on time";
-// document.getElementById('about__details_2').innerHTML="We give you a free sample to validate the quality of our products";
-// document.getElementById('about__details_3').innerHTML="We always request your comments to keep improving.";
-// document.getElementById('about__details_4').innerHTML="100% money back guaranteed.";
-// document.getElementById('contact__button').innerHTML="Shop Now";
-//             /*==============STEPS==============*/  
-// document.getElementById('section__title').innerHTML="Steps to start your <br> cleaning trip properly";
-// document.getElementById('step__card__1').innerHTML="Choose product";
-// document.getElementById('step__card__description__1').innerHTML="We have certain types of products for each zone.";
-// document.getElementById('step__card__2').innerHTML="Request an order";
-// document.getElementById('step__card__description__2').innerHTML="Once your order is requested, we move to the next step which is the shipping.";
-// document.getElementById('step__card__3').innerHTML="Get your delivery";
-// document.getElementById('step__card__description__3').innerHTML="Our delivery process is easy and fast, you receive your products direct to your door.";      
-//             /*==============PRODUCTS==============*/
-// document.getElementById('section__title__products').innerHTML="Check out our <br> products";
-// document.getElementById('product__description').innerHTML="Here are some of our great cleaning selection. In case you are looking for another type of product, write us! Buy and enjoy the best quality.";
-// document.getElementById('product__title__1').innerHTML="Grease remover";
-// document.getElementById('product__title__2').innerHTML="Bathroom cleaner";
-// document.getElementById('product__title__3').innerHTML="Multipurpose";
-// document.getElementById('product__title__4').innerHTML="Auto silicon";
-// document.getElementById('product__title__5').innerHTML="Perfumer";
-// document.getElementById('product__title__6').innerHTML="Hand gel";
-//             /*==============QUESTIONS==============*/
-// document.getElementById('section__title__faqs').innerHTML="The main questions <br> our clients ask us";
-// document.getElementById('question__item__1').innerHTML="How to use?";
-// document.getElementById('question__description__1').innerHTML="First, you pour a little of the product already mixed with water, depending on the amount you are using. Then you wait 10 to 15 seconds, and that's it, you pass your sponge and all the dirt will come out automatically.";
-// document.getElementById('question__item__2').innerHTML="How much water has to be mixed with the product?";
-// document.getElementById('question__description__2').innerHTML="In case you are using products that contain 250 ml, it can be mixed with even 1 and a half liters of water, with industrial quality!";
-// document.getElementById('question__item__3').innerHTML="Can it be used neat?";
-// document.getElementById('question__description__3').innerHTML="Of course, however, we recommend our customers use them with water. This is because we do not want your products to end quickly, since what we provide is quantity and quality.";
-// document.getElementById('question__item__4').innerHTML="How do I choose a product?";
-// document.getElementById('question__description__4').innerHTML="The products we provide are effective and of quality. However, we recommend first knowing the area where we are going to clean.";
-// document.getElementById('question__item__5').innerHTML="Do the products damage the area where they are used?";
-// document.getElementById('question__description__5').innerHTML="No, since the products we offer are only designed to remove blemishes found in the areas where it is used.";
-// document.getElementById('question__item__6').innerHTML="Does it hurt my hands?";
-// document.getElementById('question__description__6').innerHTML="Absolutely not, our products are manufactured and made for free contact with the skin; but we always recommend to our public the use of gloves.";      
-//             /*==============CONTACT==============*/
-// document.getElementById('section__title__contact').innerHTML="Write us if you want <br> to buy a product or <br> have any questions";
-// document.getElementById('contact__subtitle__call_us').innerHTML="Call us";
-// document.getElementById('contact__subtitle__write_us').innerHTML="Write us by mail";
-// document.getElementById('contact__label__email').innerHTML="Email";
-// document.getElementById('contact__label__subject').innerHTML="Subject";
-// document.getElementById('contact__label__message').innerHTML="Message";
-// document.getElementById('send__message').innerHTML="Send Message";
-//             /*==============FOOTER==============*/
-// document.getElementById('footer__title').innerHTML="Subscribe to our newsletter <br> to stay update";
-// document.getElementById('input__email').setAttribute("placeholder", "Enter your email");
-// document.getElementById('subscribe__button').innerHTML="Subscribe";
-// document.getElementById('footer_title_address').innerHTML="Our Adress";
-// document.getElementById('footer_title_contact__us').innerHTML="Contact us";
-// document.getElementById('footer_title_credit_cards').innerHTML="We accept all credit cards";
-// document.getElementById('footer_copy').innerHTML="&#169; VDMAX. All rights reserved";
-// }
 
 sr.reveal(`.home__data`)
 sr.reveal(`.home__img`, { delay: 500 })
